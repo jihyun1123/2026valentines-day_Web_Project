@@ -100,7 +100,7 @@ const handleYesClick = () => {
 
 ## 시연
 
-<video src="./src/assets/2026_Valentines_Day_project_gif.mp4" controls width="640"></video>
+[영상 보기](./src/assets/2026_Valentines_Day_project_gif.mp4)
 
 ## 기술 스택
 
