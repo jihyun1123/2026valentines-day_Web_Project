@@ -1,0 +1,72 @@
+/*header*/
+
+.letter-hedaer-container h1{
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.letter-sender {
+  margin-top: -1rem;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.letter-sender span {
+  color: #f9425d; 
+}
+
+.letter-send-alret {
+  font-size: 1em;
+  margin-top: -0.5rem;
+}
+
+
+/* main*/
+.letter-main-container {
+  margin: 2rem auto;
+  background-color: #fff0f5; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+}
+
+.letter-main-container p {
+  color: #333;
+}
+
+.letter-main-container span {
+  color: #f9425d;
+  font-weight: bold;
+}
+
+/*button container*/
+
+.button-container {
+  /* gap은 flex or grid 컨테이너에서만 간격으로 작동*/
+  display: flex;
+  gap: 1rem;
+}
+
+.yes-button, .no-button{
+  background: linear-gradient(135deg, #f9425d, #ff7b8c);
+  border: none;
+
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+
+  padding: 1rem;
+  border-radius: 0.5rem;
+
+  width: 50%;
+}
+
+.no-button{
+  background: linear-gradient(135deg, #ccc, #eee);
+}
