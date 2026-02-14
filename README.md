@@ -26,12 +26,81 @@ valentines-day-app
 ```
 
 ## 주요 기능 설명
-### 싫어요 버튼 도망가기
 
+### 싫어요 버튼 도망가기 기능
+
+NO 버튼에 마우스를 올리면 랜덤 위치로 이동해 클릭하기 어렵게 만든 재미 요소입니다.
+
+핵심 함수: `moveButtonRandomly()`
+
+```jsx
+const moveButtonRandomly = () => {
+  const randomX = Math.random() * 80; // X축 이동 범위 제한 (0~80%)
+  const randomY = Math.random() * 80; // Y축 이동 범위 제한 (0~80%)
+
+  setIsMoved(true); // absolute 위치 사용 시작
+  setPosition({ x: randomX, y: randomY }); // 새 좌표 저장
+};
+
+<button
+  className="no-button"
+  type="button"
+  onMouseEnter={moveButtonRandomly} // 마우스가 올라오면 도망
+  style={
+    isMoved
+      ? {
+          position: "absolute", // 절대 위치 적용
+          left: `${position.x}%`, // X 좌표 적용
+          top: `${position.y}%`, // Y 좌표 적용
+        }
+      : {}
+  }
+>
+  No, 싫어 😰
+</button>;
+```
+
+### 하트 비 기능
+
+YES 버튼 클릭 시 다양한 하트 이모지가 화면 상단에서 떨어지는 애니메이션이 실행됩니다.
+
+핵심 함수: `handleYesClick()`
+
+```jsx
+const handleYesClick = () => {
+  alert("빵@뎅이 잘 먹@을게!!🥵"); // 알림 표시
+  setShowHearts(true); // 하트 비 활성화
+};
+
+{
+  showHearts && (
+    <div className="heart-rain">
+      {Array.from({ length: 40 }).map((_, i) => {
+        const randomHeart =
+          heartTypes[Math.floor(Math.random() * heartTypes.length)]; // 랜덤 하트
+
+        return (
+          <span
+            key={i}
+            className="heart"
+            style={{
+              left: `${Math.random() * 100}%`, // X 위치 랜덤
+              animationDuration: `${2 + Math.random() * 3}s`, // 속도 랜덤
+              fontSize: `${20 + Math.random() * 20}px`, // 크기 랜덤
+            }}
+          >
+            {randomHeart}
+          </span>
+        );
+      })}
+    </div>
+  );
+}
+```
 
 ## 시연
 
-![GIF or Screenshot](./screenshot.gif)
+<video src="./src/assets/2026_Valentines_Day_project_gif.mp4" controls width="640"></video>
 
 ## 기술 스택
 
