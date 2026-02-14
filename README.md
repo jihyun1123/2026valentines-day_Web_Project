@@ -25,6 +25,10 @@ valentines-day-app
   └── LetterPage.css
 ```
 
+## 주요 기능 설명
+### 싫어요 버튼 도망가기
+
+
 ## 시연
 
 ![GIF or Screenshot](./screenshot.gif)

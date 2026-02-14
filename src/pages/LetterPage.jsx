@@ -1,6 +1,17 @@
+import { useState } from 'react';
 import '../style/LetterPage.css';
 
 export default function LetterPage(){
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isMoved, setIsMoved] = useState(false);
+
+  const moveButtonRandomly = () => {
+    const randomX = Math.random() * 100;
+    const randomY = Math.random() * 100;
+
+    setIsMoved(true); // 이제부터 absolute 적용
+    setPosition({ x: randomX, y: randomY });
+  };
 
   return(
     <>
@@ -21,12 +32,22 @@ export default function LetterPage(){
         type="button"
         onClick={() => alert('빵@뎅이 받았다!🥵')}
       >
-        Yes, 내 빵@뎅이 줄게! 🥰
+        Yes, 빵@뎅이 줄게! 🥰
       </button>
 
       <button
         className="no-button"
         type="button"
+        onMouseEnter={moveButtonRandomly}
+        style={
+          isMoved
+            ? {
+                position: 'absolute',
+                left: `${position.x}%`,
+                top: `${position.y}%`,
+              }
+            : {}
+        }
       >
         No, 싫어 😰
       </button>
