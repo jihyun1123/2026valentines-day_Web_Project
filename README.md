@@ -35,8 +35,8 @@ NO 버튼에 마우스를 올리면 랜덤 위치로 이동해 클릭하기 어�
 
 ```jsx
 const moveButtonRandomly = () => {
-  const randomX = Math.random() * 80; // X축 이동 범위 제한 (0~80%)
-  const randomY = Math.random() * 80; // Y축 이동 범위 제한 (0~80%)
+  const randomX = Math.random() * 130; // X축 이동 범위 제한 (0~80%)
+  const randomY = Math.random() * 100; // Y축 이동 범위 제한 (0~80%)
 
   setIsMoved(true); // absolute 위치 사용 시작
   setPosition({ x: randomX, y: randomY }); // 새 좌표 저장
