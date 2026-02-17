@@ -13,8 +13,8 @@ export default function LetterPage() {
   ];
 
   const moveButtonRandomly = () => {
-    const randomX = Math.random() * 80;
-    const randomY = Math.random() * 80;
+    const randomX = Math.random() * 130;
+    const randomY = Math.random() * 100;
 
     setIsMoved(true);
     setPosition({ x: randomX, y: randomY });
@@ -84,7 +84,7 @@ export default function LetterPage() {
               : {}
           }
         >
-          No, 싫어 😰
+          No,😰
         </button>
       </div>
 
