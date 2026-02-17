@@ -74,6 +74,7 @@ export default function LetterPage() {
           className="no-button"
           type="button"
           onMouseEnter={moveButtonRandomly}
+          onClick={() => alert("순순히 Yes를 눌러야지 진행이 될거야 😈")}
           style={
             isMoved
               ? {
